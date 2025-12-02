@@ -1,0 +1,128 @@
+@Metadata.layer: #CORE
+@UI: {
+        headerInfo : {
+                        typeName: 'Maintenance',
+                        typeNamePlural: 'Maintenance Details',
+                        title : {
+                                  type: #STANDARD,
+                                  value: 'RequestId'
+                                }
+                     },
+        presentationVariant: [{  sortOrder: [{ by: 'RequestedDate', direction: #DESC }] }]
+     }
+annotate entity ZC_MAINTENANCE_REQ with
+{
+  @UI.facet: [
+          {
+             id : 'Request',
+             purpose: #STANDARD,
+             type: #IDENTIFICATION_REFERENCE,
+             label: 'Requests',
+             position: 10
+          },
+
+          {
+             id: 'Task',
+             purpose: #STANDARD,
+             type: #LINEITEM_REFERENCE,
+             label: 'Tasks',
+             position: 20,
+             targetElement: '_Task'
+          }
+
+         ]
+
+  @UI.hidden: true
+  RequestId;
+
+  @UI: {
+         lineItem: [
+                    { position: 10, importance: #HIGH }
+                   ],
+         identification: [
+                           { position: 10 }
+                         ],
+         textArrangement: #TEXT_ONLY
+       }
+  EquipmentId;
+
+  @UI.hidden: true
+  EquipmentName;
+
+  @UI: {
+        lineItem: [
+                   { position: 20, importance: #HIGH }
+                  ],
+        selectionField: [{ position: 10 }],
+        identification: [
+                          { position: 20 }
+                        ],
+        textArrangement: #TEXT_ONLY
+      }
+  SiteId;
+
+  @UI.hidden: true
+  Site;
+
+  @UI: {
+      lineItem: [
+                 { position: 30, importance: #HIGH }
+                ],
+      selectionField: [{ position: 20 }],
+      identification: [
+                        { position: 30 }
+                      ],
+        textArrangement: #TEXT_ONLY
+    }
+  PriorityId;
+
+  @UI.hidden: true
+  Priority;
+
+  @UI: {
+    lineItem: [
+               { position: 40 }
+              ],
+    identification: [
+                      { position: 40 }
+                    ]
+  }
+  Description;
+
+  @UI: {
+    lineItem: [
+               { position: 50, importance: #HIGH }
+              ],
+    selectionField: [{ position: 30 }],
+    identification: [
+                      { position: 50 }
+                    ],
+    textArrangement: #TEXT_ONLY
+  }
+  StatusId;
+
+  @UI.hidden: true
+  Status;
+
+  @UI: {
+    lineItem: [
+               { position: 60 }
+              ],
+    selectionField: [{ position: 40 }],
+    identification: [
+                      { position: 60 }
+                    ]
+  }
+  RequestedDate;
+  //    LocalCreatedBy;
+  //    LocalCreatedAt;
+  //    LocalLastChangedBy;
+  //    LocalLastChangedAt;
+  //    LastChangedAt;
+  //    /* Associations */
+  //    _Priority;
+  //    _Site;
+  //    _Status;
+  //    _Task;
+
+}
