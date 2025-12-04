@@ -10,6 +10,7 @@
                      },
         presentationVariant: [{  sortOrder: [{ by: 'RequestedDate', direction: #DESC }] }]
      }
+
 annotate entity ZC_MAINTENANCE_REQ with
 {
   @UI.facet: [
@@ -124,5 +125,6 @@ annotate entity ZC_MAINTENANCE_REQ with
   //    _Site;
   //    _Status;
   //    _Task;
+
 
 }

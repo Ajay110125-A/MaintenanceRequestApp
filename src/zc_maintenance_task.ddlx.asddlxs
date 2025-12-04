@@ -1,0 +1,142 @@
+@Metadata.layer: #CORE
+@UI: {
+        headerInfo : {
+                        typeName: 'Task',
+                        typeNamePlural: 'Task Details',
+                        title : {
+                                  type: #STANDARD,
+                                  value: 'TaskUUId'
+                                }
+                     },
+        presentationVariant: [{  sortOrder: [{ by: 'TaskId', direction: #DESC }] }]
+     }
+annotate entity ZC_MAINTENANCE_TASK with
+{
+  @UI.facet: [
+        {
+           id : 'Task',
+           purpose: #STANDARD,
+           type: #IDENTIFICATION_REFERENCE,
+           label: 'Tasks',
+           position: 10
+        } ]
+
+  @UI.hidden: true
+  TaskUUId;
+
+  @UI.hidden: true
+  RequestUUId;
+
+  @UI: {
+        lineItem: [
+                    { position: 10, importance: #HIGH }
+                  ],
+        identification: [
+                          { position: 10 }
+                        ]
+        }
+  TaskId;
+
+  @UI: {
+         lineItem: [
+                     { position: 20, importance: #HIGH }
+                   ],
+         identification: [
+                            { position: 20 }
+                         ]
+        }
+  ScheduleStart;
+
+  @UI: {
+         lineItem: [
+                     { position: 30, importance: #HIGH }
+                   ],
+         identification: [
+                            { position: 30 }
+                         ]
+        }
+  ScheduleEnd;
+
+  @UI: {
+         lineItem: [
+                     { position: 40, importance: #HIGH }
+                   ],
+         identification: [
+                            { position: 40 }
+                         ]
+        }
+  ActualStart;
+
+  @UI: {
+         lineItem: [
+                     { position: 50, importance: #HIGH }
+                   ],
+         identification: [
+                             { position: 50 }
+                         ]
+        }
+  ActualEnd;
+
+  @UI: {
+       lineItem: [
+                   { position: 60, importance: #HIGH }
+                 ],
+       identification: [
+                           { position: 60 }
+                       ],
+       textArrangement: #TEXT_ONLY
+      }
+  TechnicianId;
+  @UI.hidden: true
+  TechnicianName;
+
+  @UI: {
+      lineItem: [
+                  { position: 70, importance: #HIGH }
+                ],
+      identification: [
+                          { position: 70 }
+                      ]
+     }
+
+  EstimatedCost;
+  @UI: {
+        lineItem: [
+                    { position: 80, importance: #HIGH }
+                  ],
+        identification: [
+                            { position: 80 }
+                        ]
+       }
+  ActualCost;
+  //         CurrencyCode;
+
+  @UI: {
+        lineItem: [
+                    { position: 90, importance: #HIGH }
+                  ],
+        identification: [
+                            { position: 90 }
+                        ],
+        textArrangement: #TEXT_ONLY
+       }
+  TaskStatus;
+  @UI.hidden: true
+  Status;
+
+  @UI: {
+      lineItem: [
+                  { position: 100, importance: #HIGH }
+                ],
+      identification: [
+                          { position: 100 }
+                      ]
+     }
+  TechNote;
+  //       LocalLastChangedAt;
+  //       /* Associations */
+  //       _Main;
+  //       _Status;
+  //       _Tech;
+
+}

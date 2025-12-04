@@ -10,18 +10,15 @@ define root view entity ZI_MAINTENANCE_REQ
   association [1..1] to ZI_EQUIP_DETAILS    as _Equip    on _Main.equipmentid = _Equip.EquipmentId
 
 {
-  key requestid              as RequestId,
-//      @ObjectModel.text.element: [ 'EquipmentName' ]
+  key request_uuid           as RequestUUId,
+      request_id             as RequestId,
       equipmentid            as EquipmentId,
       _Equip.EquipName       as EquipmentName,
-//      @ObjectModel.text.element: [ 'Site' ]
       siteid                 as SiteId,
       _Site.SiteName         as Site,
-//      @ObjectModel.text.element: [ 'Priority' ]
       priority               as PriorityId,
       _Priority.PriorityName as Priority,
       description            as Description,
-//      @ObjectModel.text.element: [ 'Status' ]
       status                 as StatusId,
       _Status.StatusName     as Status,
       requested_date         as RequestedDate,
