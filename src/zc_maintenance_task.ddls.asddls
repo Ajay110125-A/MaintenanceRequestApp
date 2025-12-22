@@ -26,7 +26,7 @@ define view entity ZC_MAINTENANCE_TASK
                                                     } 
                                         }]
       TechnicianId,
-      TechnicianName,
+      _Tech.FirstName       as TechnicianName,
 
       @Semantics.amount.currencyCode: 'CurrencyCode'
       EstimatedCost,
@@ -48,7 +48,7 @@ define view entity ZC_MAINTENANCE_TASK
       @Search.ranking: #HIGH
       @ObjectModel.text.element: [ 'Status' ]
       TaskStatus,
-      Status,
+      _Status.StatusName    as Status,
 
       TechNote,
 

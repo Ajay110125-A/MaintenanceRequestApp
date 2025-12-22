@@ -10,7 +10,7 @@ define root view entity ZC_MAINTENANCE_REQ
 {
 
   key RequestUUId,
-  
+
       RequestId,
 
       @Search.defaultSearchElement: true
@@ -21,13 +21,13 @@ define root view entity ZC_MAINTENANCE_REQ
                                           { entity: {
                                                       name: 'ZI_EQUIP_DETAILS',
                                                       element: 'EquipmentId'
-                                                    } 
+                                                    }
                                            }
                                          ]
       EquipmentId,
-      EquipmentName,
-      
-      
+      _Equip.EquipName       as EquipmentName,
+
+
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.7
       @Search.ranking: #HIGH
@@ -36,11 +36,11 @@ define root view entity ZC_MAINTENANCE_REQ
                                           { entity: {
                                                       name: 'ZI_SITE_INFO_AY',
                                                       element: 'SiteId'
-                                                    } 
+                                                    }
                                            }
                                          ]
       SiteId,
-      Site,
+      _Site.SiteName         as Site,
 
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.7
@@ -50,11 +50,11 @@ define root view entity ZC_MAINTENANCE_REQ
                                           { entity: {
                                                       name: 'ZI_PRIORITY_INFO_AY',
                                                       element: 'PriorityId'
-                                                    } 
+                                                    }
                                            }
                                          ]
       PriorityId,
-      Priority,
+      _Priority.PriorityName as Priority,
 
       Description,
 
@@ -66,11 +66,11 @@ define root view entity ZC_MAINTENANCE_REQ
                                           { entity: {
                                                       name: 'ZI_STATUS_INFO_AY',
                                                       element: 'StatusId'
-                                                    } 
+                                                    }
                                            }
                                          ]
       StatusId,
-      Status,
+      _Status.StatusName     as Status,
 
       RequestedDate,
       //      LocalCreatedBy,

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for Request'
+define service ZSD_MAINTENANCE_REQ {
+  expose ZC_MAINTENANCE_REQ  as Main;
+  expose ZC_MAINTENANCE_TASK as Task;
+}

@@ -87,6 +87,7 @@ annotate entity ZC_MAINTENANCE_TASK with
        textArrangement: #TEXT_ONLY
       }
   TechnicianId;
+  
   @UI.hidden: true
   TechnicianName;
 

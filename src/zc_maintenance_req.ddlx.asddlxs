@@ -5,7 +5,7 @@
                         typeNamePlural: 'Maintenance Details',
                         title : {
                                   type: #STANDARD,
-                                  value: 'RequestId'
+                                  value: 'RequestUUId'
                                 }
                      },
         presentationVariant: [{  sortOrder: [{ by: 'RequestedDate', direction: #DESC }] }]
@@ -32,8 +32,19 @@ annotate entity ZC_MAINTENANCE_REQ with
           }
 
          ]
-
+         
+         
   @UI.hidden: true
+  RequestUUId;
+
+  @UI: {
+         lineItem: [
+                    { position: 09, importance: #HIGH }
+                   ],
+         identification: [
+                           { position: 09 }
+                         ]
+       }
   RequestId;
 
   @UI: {
@@ -52,11 +63,11 @@ annotate entity ZC_MAINTENANCE_REQ with
 
   @UI: {
         lineItem: [
-                   { position: 20, importance: #HIGH }
+                   { position: 20, importance: #HIGH, label: 'Site' }
                   ],
         selectionField: [{ position: 10 }],
         identification: [
-                          { position: 20 }
+                          { position: 20, label: 'Site' }
                         ],
         textArrangement: #TEXT_ONLY
       }

@@ -13,14 +13,10 @@ define root view entity ZI_MAINTENANCE_REQ
   key request_uuid           as RequestUUId,
       request_id             as RequestId,
       equipmentid            as EquipmentId,
-      _Equip.EquipName       as EquipmentName,
       siteid                 as SiteId,
-      _Site.SiteName         as Site,
       priority               as PriorityId,
-      _Priority.PriorityName as Priority,
       description            as Description,
       status                 as StatusId,
-      _Status.StatusName     as Status,
       requested_date         as RequestedDate,
 
       @Semantics.user.createdBy: true

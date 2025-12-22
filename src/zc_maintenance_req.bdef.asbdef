@@ -1,0 +1,19 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_MAINTENANCE_REQ alias _Main
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Task { create; }
+}
+
+define behavior for ZC_MAINTENANCE_TASK alias _Task
+{
+  use update;
+  use delete;
+
+  use association _Main;
+}
