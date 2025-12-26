@@ -2,10 +2,10 @@
 @UI: {
         headerInfo : {
                         typeName: 'Task',
-                        typeNamePlural: 'Task Details',
+                        typeNamePlural: 'Task List',
                         title : {
                                   type: #STANDARD,
-                                  value: 'TaskUUId'
+                                  value: 'TaskId'
                                 }
                      },
         presentationVariant: [{  sortOrder: [{ by: 'TaskId', direction: #DESC }] }]
@@ -17,7 +17,7 @@ annotate entity ZC_MAINTENANCE_TASK with
            id : 'Task',
            purpose: #STANDARD,
            type: #IDENTIFICATION_REFERENCE,
-           label: 'Tasks',
+           label: 'Task',
            position: 10
         } ]
 
@@ -79,10 +79,10 @@ annotate entity ZC_MAINTENANCE_TASK with
 
   @UI: {
        lineItem: [
-                   { position: 60, importance: #HIGH }
+                   { position: 60, importance: #HIGH, label: 'Technician' }
                  ],
        identification: [
-                           { position: 60 }
+                           { position: 60, label: 'Technician' }
                        ],
        textArrangement: #TEXT_ONLY
       }
@@ -114,10 +114,10 @@ annotate entity ZC_MAINTENANCE_TASK with
 
   @UI: {
         lineItem: [
-                    { position: 90, importance: #HIGH }
+                    { position: 90, importance: #HIGH, label: 'Status' }
                   ],
         identification: [
-                            { position: 90 }
+                            { position: 90, label: 'Status' }
                         ],
         textArrangement: #TEXT_ONLY
        }

@@ -2,10 +2,10 @@
 @UI: {
         headerInfo : {
                         typeName: 'Maintenance',
-                        typeNamePlural: 'Maintenance Details',
+                        typeNamePlural: 'Maintenance List',
                         title : {
                                   type: #STANDARD,
-                                  value: 'RequestUUId'
+                                  value: 'RequestId'
                                 }
                      },
         presentationVariant: [{  sortOrder: [{ by: 'RequestedDate', direction: #DESC }] }]
@@ -26,7 +26,7 @@ annotate entity ZC_MAINTENANCE_REQ with
              id: 'Task',
              purpose: #STANDARD,
              type: #LINEITEM_REFERENCE,
-             label: 'Tasks',
+             label: 'Tasks List',
              position: 20,
              targetElement: '_Task'
           }
@@ -49,10 +49,10 @@ annotate entity ZC_MAINTENANCE_REQ with
 
   @UI: {
          lineItem: [
-                    { position: 10, importance: #HIGH }
+                    { position: 10, importance: #HIGH, label: 'Equipment' }
                    ],
          identification: [
-                           { position: 10 }
+                           { position: 10, label: 'Equipment' }
                          ],
          textArrangement: #TEXT_ONLY
        }

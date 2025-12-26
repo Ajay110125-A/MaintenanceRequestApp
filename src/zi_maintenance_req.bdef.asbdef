@@ -28,6 +28,8 @@ etag master LocalLastChangedAt
       LocalLastChangedAt = local_last_changed_by;
       LastChangedAt      = last_changed_at;
     }
+
+   determination createRequestId on save { create; field RequestId; }
 }
 
 define behavior for ZI_MAINTENANCE_TASK alias _Task implementation in class zcl_bp_maintenance_task unique
