@@ -21,7 +21,8 @@ define root view entity ZC_MAINTENANCE_REQ
                                           { entity: {
                                                       name: 'ZI_EQUIP_DETAILS',
                                                       element: 'EquipmentId'
-                                                    }
+                                                    },
+                                            useForValidation: true       
                                            }
                                          ]
       EquipmentId,
@@ -36,7 +37,8 @@ define root view entity ZC_MAINTENANCE_REQ
                                           { entity: {
                                                       name: 'ZI_SITE_INFO_AY',
                                                       element: 'SiteId'
-                                                    }
+                                                    },
+                                            useForValidation: true
                                            }
                                          ]
       SiteId,
@@ -50,7 +52,8 @@ define root view entity ZC_MAINTENANCE_REQ
                                           { entity: {
                                                       name: 'ZI_PRIORITY_INFO_AY',
                                                       element: 'PriorityId'
-                                                    }
+                                                    },
+                                            useForValidation: true
                                            }
                                          ]
       PriorityId,
@@ -66,7 +69,8 @@ define root view entity ZC_MAINTENANCE_REQ
                                           { entity: {
                                                       name: 'ZI_STATUS_INFO_AY',
                                                       element: 'StatusId'
-                                                    }
+                                                    },
+                                            useForValidation: true
                                            }
                                          ]
       StatusId,

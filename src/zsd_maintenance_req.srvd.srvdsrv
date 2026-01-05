@@ -2,4 +2,9 @@
 define service ZSD_MAINTENANCE_REQ {
   expose ZC_MAINTENANCE_REQ  as Main;
   expose ZC_MAINTENANCE_TASK as Task;
+  expose ZI_TECH_INFO_AY     as TechnicianInfo;
+  expose ZI_STATUS_INFO_AY   as StatusInfo;
+  expose ZI_SITE_INFO_AY     as SiteInfo;
+  expose ZI_PRIORITY_INFO_AY as PriorityInfo;
+  expose ZI_EQUIP_DETAILS    as EquipmentDetails;
 }

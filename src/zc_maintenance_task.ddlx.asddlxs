@@ -19,7 +19,47 @@ annotate entity ZC_MAINTENANCE_TASK with
            type: #IDENTIFICATION_REFERENCE,
            label: 'Task',
            position: 10
-        } ]
+        },
+        {  id : 'Details',
+           type: #COLLECTION,
+           label: 'Details',
+           position: 20
+        },
+        {
+          id : 'ScheduleDates',
+          purpose: #STANDARD,
+          parentId: 'Details',
+          type: #FIELDGROUP_REFERENCE,
+          targetQualifier: 'SCHEDULE',
+          label: 'Scheduler Dates',
+          position: 20
+        },
+                {
+          id : 'ActualDates',
+  //          purpose: #STANDARD,
+          parentId: 'Details',
+          type: #FIELDGROUP_REFERENCE,
+          targetQualifier: 'ACTUAL',
+          label: 'Actual Dates',
+          position: 30
+        },
+        {
+          id : 'CostDetails',
+          purpose: #STANDARD,
+          parentId: 'Details',
+          type: #FIELDGROUP_REFERENCE,
+          targetQualifier: 'COST',
+          label: 'Cost Details',
+          position: 40
+        },
+        {
+          id: 'Notes',
+          type: #FIELDGROUP_REFERENCE,
+          targetQualifier: 'TECH',
+          label: 'Techician',
+          position: 50
+        }
+        ]
 
   @UI.hidden: true
   TaskUUId;
@@ -28,97 +68,68 @@ annotate entity ZC_MAINTENANCE_TASK with
   RequestUUId;
 
   @UI: {
-        lineItem: [
-                    { position: 10, importance: #HIGH }
-                  ],
-        identification: [
-                          { position: 10 }
-                        ]
+        lineItem: [{ position: 10, importance: #HIGH }],
+        identification: [{ position: 10 }]
         }
   TaskId;
 
   @UI: {
-         lineItem: [
-                     { position: 20, importance: #HIGH }
-                   ],
-         identification: [
-                            { position: 20 }
-                         ]
+         lineItem: [{ position: 20, importance: #HIGH }],
+  //         identification: [{ position: 20 } ],
+        fieldGroup: [{ position: 10, qualifier: 'SCHEDULE'  }]
         }
   ScheduleStart;
 
   @UI: {
-         lineItem: [
-                     { position: 30, importance: #HIGH }
-                   ],
-         identification: [
-                            { position: 30 }
-                         ]
+         lineItem: [{ position: 30, importance: #HIGH }],
+  //         identification: [{ position: 30 }],
+         fieldGroup: [{ position: 20, qualifier: 'SCHEDULE'  }]
         }
   ScheduleEnd;
 
   @UI: {
-         lineItem: [
-                     { position: 40, importance: #HIGH }
-                   ],
-         identification: [
-                            { position: 40 }
-                         ]
+//         lineItem: [{ position: 40, importance: #HIGH }],
+  //         identification: [{ position: 40, qualifier: 'SCHEDULE' }],
+         fieldGroup: [{ position: 10, qualifier: 'ACTUAL'  }]
         }
   ActualStart;
 
   @UI: {
-         lineItem: [
-                     { position: 50, importance: #HIGH }
-                   ],
-         identification: [
-                             { position: 50 }
-                         ]
+//         lineItem: [{ position: 50, importance: #HIGH }],
+  //         identification: [{ position: 50 }],
+         fieldGroup: [{ position: 10, qualifier: 'ACTUAL'  }]
         }
   ActualEnd;
 
   @UI: {
-       lineItem: [
-                   { position: 60, importance: #HIGH, label: 'Technician' }
-                 ],
-       identification: [
-                           { position: 60, label: 'Technician' }
-                       ],
+       lineItem: [{ position: 60, importance: #HIGH, label: 'Technician' }],
+//       identification: [{ position: 60, label: 'Technician' }],
+       fieldGroup: [{ position: 10, qualifier: 'TECH'  }],
        textArrangement: #TEXT_ONLY
       }
   TechnicianId;
-  
+
   @UI.hidden: true
   TechnicianName;
 
   @UI: {
-      lineItem: [
-                  { position: 70, importance: #HIGH }
-                ],
-      identification: [
-                          { position: 70 }
-                      ]
+      lineItem: [{ position: 70, importance: #HIGH }],
+  //      identification: [{ position: 70 }],
+      fieldGroup: [{ position: 10, qualifier: 'COST'  }]
      }
 
   EstimatedCost;
   @UI: {
-        lineItem: [
-                    { position: 80, importance: #HIGH }
-                  ],
-        identification: [
-                            { position: 80 }
-                        ]
+        lineItem: [{ position: 80, importance: #HIGH }],
+  //        identification: [{ position: 80 }],
+        fieldGroup: [{ position: 20, qualifier: 'COST'  }]
        }
   ActualCost;
   //         CurrencyCode;
 
   @UI: {
-        lineItem: [
-                    { position: 90, importance: #HIGH, label: 'Status' }
-                  ],
-        identification: [
-                            { position: 90, label: 'Status' }
-                        ],
+        lineItem: [{ position: 90, importance: #HIGH, label: 'Status' }],
+        identification: [{ position: 90, label: 'Status' }],
         textArrangement: #TEXT_ONLY
        }
   TaskStatus;
@@ -126,18 +137,10 @@ annotate entity ZC_MAINTENANCE_TASK with
   Status;
 
   @UI: {
-      lineItem: [
-                  { position: 100, importance: #HIGH }
-                ],
-      identification: [
-                          { position: 100 }
-                      ]
+//      lineItem: [{ position: 100, importance: #HIGH }],
+//      identification: [{ position: 100 }],
+      fieldGroup: [{ position: 20, qualifier: 'TECH'  }]
      }
   TechNote;
-  //       LocalLastChangedAt;
-  //       /* Associations */
-  //       _Main;
-  //       _Status;
-  //       _Tech;
 
 }

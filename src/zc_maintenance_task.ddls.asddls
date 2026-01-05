@@ -23,7 +23,8 @@ define view entity ZC_MAINTENANCE_TASK
       @Consumption.valueHelpDefinition: [{ entity: {
                                                      name: 'ZI_TECH_INFO_AY',
                                                      element: 'TechnicianId'
-                                                    } 
+                                                    },
+                                            useForValidation: true
                                         }]
       TechnicianId,
       _Tech.FirstName       as TechnicianName,
